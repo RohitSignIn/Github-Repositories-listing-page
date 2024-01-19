@@ -1,0 +1,36 @@
+#repo_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.repo {
+  max-width: 400px;
+  padding: 0 1rem;
+  width: max-content;
+  background-color: var(--bgHighlight);
+  border-radius: 2px solid var(--bgHighlight);
+}
+.repo > p:first-child {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+}
+.repo > p:nth-child(2) {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.repo > section {
+  padding: 0.5rem 0;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.repo > section > p {
+  font-size: 0.9rem;
+  background: var(--fontColor2);
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+}

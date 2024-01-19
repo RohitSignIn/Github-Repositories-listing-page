@@ -36,6 +36,15 @@
   border-radius: 50%;
 }
 
+#user_img > p {
+  margin-top: 0.6rem;
+}
+
+#user_img > p > a {
+  text-decoration: none;
+  color: var(--fontColor2);
+}
+
 /* other platform */
 #other_platform {
   padding: 0.5rem 0;
