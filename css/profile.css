@@ -1,0 +1,76 @@
+#profile {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+#user_info {
+  position: relative;
+}
+
+/* Heading - name */
+#user_info > h1 {
+  padding: 0.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+/* Bio */
+#user_info > p {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Location */
+#user_info > #location > p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* user profile image */
+#user_img > img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+/* other platform */
+#other_platform {
+  padding: 0.5rem 0;
+}
+
+#other_platform > p > a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--fontColor2);
+}
+
+/* Location Icon - Start */
+#location {
+  padding: 0.3rem 0;
+  display: flex;
+  gap: 0.4rem;
+  justify-content: left;
+}
+#pin {
+  width: 15px;
+  height: 15px;
+  background-color: var(--fontColor);
+  border-radius: 60px 60px 0px 60px;
+  position: relative;
+  transform: rotate(45deg);
+}
+#pin::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--MainbgColor);
+  position: absolute;
+  left: 26%;
+  top: 26%;
+  border-radius: 60px;
+}
+/* Location Icon - Ends */
