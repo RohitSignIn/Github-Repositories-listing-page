@@ -34,7 +34,7 @@
         </section>
 
         <section id="repo_container">
-            <section class="repo">
+            <!-- <section class="repo">
                 <p>Heroes</p>
                 <p>Herores description goes here</p>
                 <section>
@@ -43,50 +43,58 @@
                     <p>angularjs</p>
                     <p>Angular 2+</p>
                 </section>
-            </section>
+            </section> -->
+        </section>
 
-            <section class="repo">
-                <p>Heroes</p>
-                <p>Herores description goes here</p>
-                <section>
-                    <p>javascript</p>
-                    <p>angular</p>
-                    <p>angularjs</p>
-                    <p>Angular 2+</p>
-                </section>
-            </section>
 
-            <section class="repo">
-                <p>Heroes</p>
-                <p>Herores description goes here</p>
-                <section>
-                    <p>javascript</p>
-                    <p>angular</p>
-                    <p>angularjs</p>
-                    <p>Angular 2+</p>
-                </section>
-            </section>
+        <style>
+            #pagination_con {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                margin: 1rem;
+            }
 
-            <section class="repo">
-                <p>Heroes</p>
-                <p>Herores description goes here</p>
-                <section>
-                    <p>javascript</p>
-                    <p>angular</p>
-                    <p>angularjs</p>
-                    <p>Angular 2+</p>
-                </section>
-            </section>
+            #pages a {
+                padding: 0.6rem 1rem;
+                border-radius: 5px;
+                font-size: 1.2rem;
+                transition: background-color 0.3s ease-in-out;
+            }
 
-            <section class="repo">
-                <p>Heroes</p>
-                <p>Herores description goes here</p>
-                <section>
-                    <p>javascript</p>
-                    <p>angular</p>
-                    <p>angularjs</p>
-                    <p>Angular 2+</p>
-                </section>
+            #pages a:hover {
+                background-color: var(--fontColor);
+            }
+
+            #per_page {
+                color: var(--fontColor);
+            }
+        </style>
+
+        <section id="pagination_con">
+            <section id="pages">
+                <a href="#" class="w3-button">&laquo;</a>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+                <a href="">6</a>
+                <a href="">7</a>
+                <a href="">8</a>
+                <a href="">9</a>
+                <a href="#" class="w3-button">&raquo;</a>
+            </section>
+            <section id="per_page">
+                <label>Per Page</label>
+                <select name="" id="">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
             </section>
         </section>
 

@@ -6,9 +6,8 @@
 }
 
 .repo {
-  max-width: 400px;
+  width: 400px;
   padding: 0 1rem;
-  width: max-content;
   background-color: var(--bgHighlight);
   border-radius: 2px solid var(--bgHighlight);
 }

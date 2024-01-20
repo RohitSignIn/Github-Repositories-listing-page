@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  let urlParams = new URLSearchParams(window.location.search);
+  urlParams = new URLSearchParams(window.location.search);
   username = urlParams.get("user");
 
-  apiUserDetail = "https://api.github.com/users/" + username;
+  const apiUserDetail = "https://api.github.com/users/" + username;
 
   $.ajax({
     type: "get",

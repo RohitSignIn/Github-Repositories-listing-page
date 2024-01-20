@@ -1,20 +1,14 @@
 $(document).ready(function () {
-  apiRepos = `https://api.github.com/users/${username}/repos?page=1&per_page=10`;
+  const page = urlParams.get("page") ? urlParams.get("page") : 1;
+  const per_page = urlParams.get("per_page") ? urlParams.get("per_page") : 10;
 
-  function getLanguagesUsed(url) {
-    let languages = "";
-    $.ajax({
+  apiRepos = `https://api.github.com/users/${username}/repos?page=${page}&per_page=${per_page}`;
+
+  function getLanguagesUsed(url, callback) {
+    return $.ajax({
       type: "get",
       url: url,
-      success: function (response) {
-        if (response) {
-          Object.keys(response).forEach((key, val) => {
-            languages = `<p>${key}</p> ${languages}`;
-          });
-          console.log(languages);
-          return languages;
-        }
-      },
+      success: callback,
     });
   }
 
@@ -22,16 +16,36 @@ $(document).ready(function () {
     type: "get",
     url: apiRepos,
     success: function (response) {
-      response.map((repo) => {
-        $("#repo_container").append(`
-      <section class="repo">
-                <p>${repo.name}</p>
-                <p>${repo.description ? repo.description : ""}</p>
-                <section>
-                    ${console.log(getLanguagesUsed(repo.languages_url))}
-                    ${getLanguagesUsed(repo.languages_url)}
-                </section>
-            </section>`);
+      response.forEach((repo) => {
+        // Entering Data in Repo Container
+
+        // Main Repo that - Initial Repo
+        const mainRepo = $("<section></section>").addClass("repo");
+
+        // Repo Data
+        const repoName = $("<p></p>").text(repo.name);
+
+        const repoBio = repo.description
+          ? $("<p></p>").text(repo.description)
+          : false;
+
+        const languages = repo.languages_url ? $("<section></section>") : false;
+        if (languages) {
+          getLanguagesUsed(repo.languages_url, function (data) {
+            Object.keys(data).forEach((key) => {
+              const lang = $("<p></p>").text(key);
+              languages.append(lang);
+            });
+          });
+        }
+
+        // Appending prepared data in mainRepo
+        mainRepo.append(repoName);
+        if (repoBio) mainRepo.append(repoBio);
+        if (languages) mainRepo.append(languages);
+
+        // Final Append prepared repo in repo container
+        $("#repo_container").append(mainRepo);
       });
     },
   });
