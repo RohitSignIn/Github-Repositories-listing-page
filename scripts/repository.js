@@ -3,6 +3,12 @@ $(document).ready(function () {
     return $.ajax({
       type: "get",
       url: url,
+      beforeSend: function () {
+        $(".loader_con").show();
+      },
+      complete: function () {
+        $(".loader_con").hide();
+      },
       success: callback,
     });
   }
@@ -11,6 +17,12 @@ $(document).ready(function () {
     $.ajax({
       type: "get",
       url: apiRepos,
+      beforeSend: function () {
+        $(".loader_con").show();
+      },
+      complete: function () {
+        $(".loader_con").hide();
+      },
       success: function (response) {
         response.forEach((repo) => {
           // Entering Data in Repo Container
